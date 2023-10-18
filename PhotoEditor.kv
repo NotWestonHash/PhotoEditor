@@ -10,14 +10,37 @@ Display
             source: root.display_image()
             size_hint: 1, 6
 
-        BoxLayout:
-            Button:
-                text: "<<<"
-                background_color: "black"
-                on_press: root.back_image()
 
-            Button:
-                text: ">>>"
-                background_color: "black"
-                on_press: root.advance_image()
-        GridLayout
+        BoxLayout:
+            size_hint: 1,2
+            orientation: "horizontal"
+            BoxLayout:
+                orientation: "vertical"
+                Button:
+                    text: "<<<"
+                    background_color: "black"
+                    on_press: root.back_image()
+                TextInput:
+                    id: ask
+                    text: "Enter Image Name"
+                Button:
+                    text: "Black And White"
+                Button:
+                    text: "Line Image"
+                    on_release: root.ln()
+                Button:
+                    text: "Sepia"
+            BoxLayout:
+                orientation: "vertical"
+                Button:
+                    text: ">>>"
+                    background_color: "black"
+                    on_press: root.advance_image()
+                Button:
+                    text: "Load"
+                Button:
+                    text: "Inverse"
+                Button:
+                    text: "Pointilism"
+                Button:
+                    text: "Pixelate"
