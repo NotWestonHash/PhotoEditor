@@ -21,15 +21,17 @@ Display
                     background_color: "black"
                     on_press: root.back_image()
                 TextInput:
-                    id: ask
+                    id: file
                     text: "Enter Image Name"
                 Button:
                     text: "Black And White"
+                    on_release: root.bw()
                 Button:
                     text: "Line Image"
                     on_release: root.ln()
                 Button:
                     text: "Sepia"
+                    on_release: root.sp()
             BoxLayout:
                 orientation: "vertical"
                 Button:
@@ -38,9 +40,13 @@ Display
                     on_press: root.advance_image()
                 Button:
                     text: "Load"
+                    on_release: root.load(file.text)
                 Button:
                     text: "Inverse"
+                    on_release: root.inv()
                 Button:
                     text: "Pointilism"
+                    on_release: root.pt()
                 Button:
                     text: "Pixelate"
+                    on_release: root.px()
